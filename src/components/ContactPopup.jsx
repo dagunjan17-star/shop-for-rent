@@ -171,7 +171,7 @@ export default function ContactPopup({ isOpen, onClose, propertyTitle }) {
             bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]
             hover:opacity-90
             text-white font-semibold rounded-xl
-            transition shadow-md disabled:opacity-60"
+            transition shadow-md disabled:opacity-60 cursor-pointer"
           >
             {loading ? "Submitting..." : "Submit Enquiry"}
           </button>

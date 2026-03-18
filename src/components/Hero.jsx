@@ -183,7 +183,7 @@ const HeroSection = () => {
                 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF]
                 hover:opacity-90
                 text-white transition duration-300
-                disabled:opacity-70 shadow-md"
+                disabled:opacity-70 shadow-md cursor-pointer"
               >
                 {loading ? "Submitting..." : "Submit Enquiry"}
               </button>
