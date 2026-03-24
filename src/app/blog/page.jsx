@@ -1,14 +1,9 @@
 import React from "react";
-import { headers } from "next/headers";
 import BlogList from "./BlogList";
 
 export async function generateMetadata() {
 
-  const h = await headers();
-  const domain = h.get("host") || "localhost";
-
-  // remove www
-  const cleanDomain = domain.replace(/^www\./, "");
+  const domain = "www.shopforrentingurgaon.com"; // ✅ FIXED DOMAIN
 
   return {
 
@@ -27,7 +22,7 @@ export async function generateMetadata() {
     ],
 
     alternates: {
-      canonical: `https://${cleanDomain}/blog`
+      canonical: `https://${domain}/blog`, // ✅ FIXED
     },
 
   };
@@ -35,13 +30,9 @@ export async function generateMetadata() {
 
 const Page = () => {
   return (
-
     <div className="min-h-screen bg-gradient-to-b from-white to-[#FFF5FB]">
-
       <BlogList />
-
     </div>
-
   );
 };
 

@@ -2,8 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useBlog } from "@/contextapi/BlogContext";
+import Pagination from "@/components/Pagination";
 
-// Date formatter
 const formatDate = (date) => {
   if (!date) return "";
   const d = new Date(date);
@@ -13,48 +14,29 @@ const formatDate = (date) => {
 };
 
 export default function BlogList() {
+  const { blogs, loading, error, page, total, limit, fetchBlogs } = useBlog();
 
-  const loading = false;
-  const error = null;
+  const handlePageChange = (pageNum) => {
+    fetchBlogs(pageNum);
 
-  const blogs = [
-    {
-      _id: "1",
-      Slug: "3bhk-flats-in-gurgaon-buyers-guide",
-      HeroImg: {
-        url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
-      },
-      HeroAltText: "3BHK Flats in Gurgaon Guide",
-      Category: "Real Estate",
-      Title: "Complete Guide to Buying a 3BHK Flat in Gurgaon",
-      Date: "2024-05-10",
-    },
-    {
-      _id: "2",
-      Slug: "best-sectors-to-buy-3bhk-in-gurgaon",
-      HeroImg: {
-        url: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
-      },
-      HeroAltText: "Best Sectors in Gurgaon",
-      Category: "Property Investment",
-      Title: "Best Sectors in Gurgaon to Buy a 3BHK Flat in 2024",
-      Date: "2024-04-22",
-    },
-    {
-      _id: "3",
-      Slug: "why-invest-in-gurgaon-real-estate",
-      HeroImg: {
-        url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-      },
-      HeroAltText: "Invest in Gurgaon Real Estate",
-      Category: "Investment",
-      Title: "Why Gurgaon Real Estate is a Smart Investment in 2024",
-      Date: "2024-03-18",
-    },
-  ];
+    const section = document.getElementById("blog-section");
+    if (section) {
+      const yOffset = -80;
+      const y =
+        section.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-0 max-w-7xl mx-auto py-16 bg-gradient-to-b from-white to-[#FFF5FB]">
+    <section
+      id="blog-section"
+      className="px-4 sm:px-6 lg:px-0 max-w-7xl mx-auto py-12
+      bg-gradient-to-b from-white to-[#FFF5FB]"
+    >
 
       {/* HEADING */}
       <div className="text-center mb-14">
@@ -74,78 +56,124 @@ export default function BlogList() {
 
       {/* LOADING */}
       {loading && (
-        <div className="flex justify-center py-20">
-          <div className="relative w-14 h-14">
-            <div className="absolute inset-0 rounded-full border-4 border-pink-200"></div>
-            <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#DD7BDF] border-r-[#FFBBE1] animate-spin"></div>
+        <div className="flex justify-center items-center py-24">
+          <div className="relative flex items-center justify-center">
+
+            <div className="absolute w-20 h-20 rounded-full 
+            bg-[#DD7BDF]/20 blur-xl animate-pulse"></div>
+
+            <div className="w-16 h-16 rounded-full border-[5px] border-[#DD7BDF]/10"></div>
+
+            <div className="absolute w-16 h-16 rounded-full 
+            border-[5px] border-transparent 
+            border-t-[#DD7BDF] border-r-[#FFBBE1] 
+            animate-spin"></div>
+
+            <div className="absolute w-3 h-3 bg-[#DD7BDF] rounded-full shadow-md"></div>
+
           </div>
         </div>
       )}
 
       {/* ERROR */}
       {error && !loading && (
-        <div className="text-center py-16">
-          <h2 className="text-xl font-semibold text-red-600 mb-3">
-            Something went wrong
-          </h2>
-          <p className="text-gray-600">
-            Unable to load blogs right now.
-          </p>
-        </div>
+        <div className="text-center py-16 text-red-500">{error}</div>
       )}
 
       {/* BLOG GRID */}
-      {!loading && !error && blogs?.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {!loading && !error && Array.isArray(blogs) && blogs.length > 0 && (
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-          {blogs.map((post, index) => (
-            <Link
-              href={`/blog/${post.Slug}`}
-              key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-pink-100 transition duration-300 hover:-translate-y-1"
-            >
+            {blogs.map((post, index) => (
+              <Link
+                href={`/blog/${post?.Slug || post?.slug || ""}`}
+                key={post?._id || index}
+                className="group bg-white rounded-2xl overflow-hidden 
+                shadow-sm hover:shadow-2xl 
+                border border-[#DD7BDF]/10 
+                hover:border-[#DD7BDF]/20
+                transition duration-300 hover:-translate-y-1"
+              >
 
-              {/* IMAGE */}
-              <div className="overflow-hidden">
-                <Image
-                  src={post.HeroImg?.url}
-                  alt={post?.HeroAltText}
-                  width={600}
-                  height={350}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+                {/* IMAGE */}
+                <div className="overflow-hidden relative">
 
-              {/* CONTENT */}
-              <div className="p-6">
+                  <Image
+                    src={
+                      post?.HeroImg?.url ||
+                      post?.heroImg?.url ||
+                      post?.image ||
+                      "/fallback.jpg"
+                    }
+                    alt={post?.HeroAltText || post?.alt || "blog image"}
+                    width={600}
+                    height={350}
+                    className="w-full h-56 object-cover 
+                    group-hover:scale-110 transition-transform duration-500"
+                  />
 
-                {/* CATEGORY */}
-                <span className="inline-block text-xs font-semibold bg-pink-100 text-[#DD7BDF] px-3 py-1 rounded-full mb-3">
-                  {post.Category}
-                </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                {/* TITLE */}
-                <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-3 group-hover:text-[#DD7BDF] transition-colors duration-300">
-                  {post.Title}
-                </h3>
+                </div>
 
-                {/* DATE */}
-                <p className="text-sm text-gray-500">
-                  {formatDate(post.Date)}
-                </p>
+                {/* CONTENT */}
+                <div className="p-6">
 
-              </div>
+                  <span className="inline-block text-xs font-semibold 
+                  bg-[#DD7BDF]/10 text-[#DD7BDF] px-3 py-1 rounded-full mb-3">
+                    {post?.Category || post?.category || "General"}
+                  </span>
 
-            </Link>
-          ))}
+                  <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-3 
+                  group-hover:text-[#DD7BDF] transition">
+                    {post?.Title || post?.title || "No Title"}
+                  </h3>
 
-        </div>
+                  <p className="text-sm text-gray-500">
+                    {formatDate(post?.Date || post?.date)}
+                  </p>
+
+                </div>
+
+              </Link>
+            ))}
+
+          </div>
+
+          {/* PAGINATION */}
+          <div className="mt-12">
+            <Pagination
+              totalItems={total}
+              itemsPerPage={limit}
+              currentPage={page}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </>
       )}
 
       {/* EMPTY */}
-      {!loading && !error && blogs?.length === 0 && (
-        <div className="text-center py-16 text-gray-600">
-          No blogs found.
+      {!loading && !error && Array.isArray(blogs) && blogs.length === 0 && (
+        <div className="flex flex-col items-center justify-center text-center py-20">
+
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            Blogs Coming Soon 🚀
+          </h3>
+
+          <p className="text-gray-500 mt-3 max-w-md">
+            We are working on some amazing real estate insights.
+          </p>
+
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-6 px-6 py-2 rounded-lg 
+            bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] 
+            text-white hover:opacity-90 transition shadow-md"
+          >
+            Refresh
+          </button>
+
         </div>
       )}
 

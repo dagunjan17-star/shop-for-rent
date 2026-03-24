@@ -6,7 +6,6 @@ export default function Pagination({
   currentPage,
   onPageChange,
 }) {
-
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   if (totalPages <= 1) return null;
@@ -14,9 +13,7 @@ export default function Pagination({
   const maxVisible = 3;
 
   const getVisiblePages = () => {
-
     let start = Math.max(1, currentPage - 1);
-
     let end = start + maxVisible - 1;
 
     if (end > totalPages) {
@@ -25,103 +22,96 @@ export default function Pagination({
     }
 
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-
   };
 
   const visiblePages = getVisiblePages();
 
   return (
+    <div className="flex justify-center mt-8 px-2">
 
-    <div className="flex justify-center items-center gap-2 mt-12 flex-wrap">
+      {/* 👉 MOBILE SCROLL CONTAINER */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
 
-      {/* PREV */}
-
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="px-4 py-2 rounded-lg border border-[#FFBBE1]
-        text-[#DD7BDF] disabled:opacity-40
-        hover:bg-[#FFF5FB] transition"
-      >
-        Prev
-      </button>
-
-      {/* FIRST PAGE */}
-
-      {visiblePages[0] > 1 && (
-        <>
-
-          <button
-            onClick={() => onPageChange(1)}
-            className="px-4 py-2 rounded-lg border border-[#FFBBE1]
-            text-[#DD7BDF] hover:bg-[#FFF5FB] transition"
-          >
-            1
-          </button>
-
-          {visiblePages[0] > 2 && (
-            <span className="px-2 text-gray-400">...</span>
-          )}
-
-        </>
-      )}
-
-      {/* PAGE NUMBERS */}
-
-      {visiblePages.map((page) => (
-
+        {/* PREV */}
         <button
-          key={page}
-          onClick={() => onPageChange(page)}
-          className={`px-4 py-2 rounded-lg font-medium transition
-
-          ${
-            currentPage === page
-              ? "bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] text-white shadow-md"
-              : "border border-[#FFBBE1] text-[#DD7BDF] hover:bg-[#FFF5FB]"
-          }
-
-          `}
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+          rounded-md sm:rounded-lg border border-[#FFBBE1]
+          text-[#DD7BDF] disabled:opacity-40
+          hover:bg-[#FFF5FB] transition whitespace-nowrap"
         >
-          {page}
+          Prev
         </button>
 
-      ))}
+        {/* FIRST PAGE */}
+        {visiblePages[0] > 1 && (
+          <>
+            <button
+              onClick={() => onPageChange(1)}
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+              rounded-md sm:rounded-lg border border-[#FFBBE1]
+              text-[#DD7BDF] hover:bg-[#FFF5FB] transition"
+            >
+              1
+            </button>
 
-      {/* LAST PAGE */}
+            {visiblePages[0] > 2 && (
+              <span className="px-1 text-gray-400 text-sm">...</span>
+            )}
+          </>
+        )}
 
-      {visiblePages[visiblePages.length - 1] < totalPages && (
-        <>
-
-          {visiblePages[visiblePages.length - 1] < totalPages - 1 && (
-            <span className="px-2 text-gray-400">...</span>
-          )}
-
+        {/* PAGE NUMBERS */}
+        {visiblePages.map((page) => (
           <button
-            onClick={() => onPageChange(totalPages)}
-            className="px-4 py-2 rounded-lg border border-[#FFBBE1]
-            text-[#DD7BDF] hover:bg-[#FFF5FB] transition"
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+            rounded-md sm:rounded-lg font-medium transition whitespace-nowrap
+
+            ${
+              currentPage === page
+                ? "bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] text-white shadow"
+                : "border border-[#FFBBE1] text-[#DD7BDF] hover:bg-[#FFF5FB]"
+            }
+            `}
           >
-            {totalPages}
+            {page}
           </button>
+        ))}
 
-        </>
-      )}
+        {/* LAST PAGE */}
+        {visiblePages[visiblePages.length - 1] < totalPages && (
+          <>
+            {visiblePages[visiblePages.length - 1] < totalPages - 1 && (
+              <span className="px-1 text-gray-400 text-sm">...</span>
+            )}
 
-      {/* NEXT */}
+            <button
+              onClick={() => onPageChange(totalPages)}
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+              rounded-md sm:rounded-lg border border-[#FFBBE1]
+              text-[#DD7BDF] hover:bg-[#FFF5FB] transition"
+            >
+              {totalPages}
+            </button>
+          </>
+        )}
 
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="px-4 py-2 rounded-lg border border-[#FFBBE1]
-        text-[#DD7BDF] disabled:opacity-40
-        hover:bg-[#FFF5FB] transition"
-      >
-        Next
-      </button>
+        {/* NEXT */}
+        <button
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base
+          rounded-md sm:rounded-lg border border-[#FFBBE1]
+          text-[#DD7BDF] disabled:opacity-40
+          hover:bg-[#FFF5FB] transition whitespace-nowrap"
+        >
+          Next
+        </button>
 
+      </div>
     </div>
-
   );
-
 }
