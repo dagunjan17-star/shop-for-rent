@@ -76,7 +76,7 @@ export default function Footer() {
                   href={`/${createSlug(loc)}`}
                   className="block truncate text-gray-400 hover:text-[#FFBBE1] transition duration-300"
                 >
-                  Shop For Rent in {loc}
+                  Shop For Rent in {loc} Gurgaon
                 </Link>
 
                 {/* TOOLTIP */}
@@ -90,7 +90,7 @@ export default function Footer() {
                 border border-[#DD7BDF]/40 z-[9999]
                 pointer-events-none">
 
-                  Shop For Rent in {loc}
+                  Shop For Rent in {loc} Gurgaon
 
                 </div>
 
