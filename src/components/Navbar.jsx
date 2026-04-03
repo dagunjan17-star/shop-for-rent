@@ -37,7 +37,7 @@ const Navbar = () => {
               }}
               className="text-xl sm:text-2xl font-bold tracking-wide text-white hover:opacity-90 transition duration-300"
             >
-              Shop for Rent Gurgaon
+              DA
             </Link>
 
             {/* ================= DESKTOP LINKS ================= */}
