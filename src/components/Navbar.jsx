@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { name: "How It's Work", path: "/how-it-works" },
     { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
   ];
