@@ -114,7 +114,7 @@ const HeroSection = () => {
             expand your business.
 
           </p>
-          <Link href="/shop-for-rent">
+          <Link href="/how-it-works">
   <button className="relative overflow-hidden bg-white text-[#DD7BDF] px-6 py-3 rounded-xl font-semibold shadow-md transition-all duration-300 hover:bg-white hover:shadow-xl hover:scale-105 mt-4 cursor-pointer">
     
     <span className="relative z-10">Learn More</span>

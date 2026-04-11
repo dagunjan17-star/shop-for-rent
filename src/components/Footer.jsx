@@ -3,35 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const locations = [
-  'Ashok Vihar',           'DLF Phase 1', 'DLF Phase 2',
-  'DLF Phase 4',           'DLF phase 3', 'Golf Course Road',
-  'MG Road',               'Manesar',     'Palam Vihar',
-  'Palam Vihar Extension', 'Sadar Bazar', 'Sector 102',
-  'Sector 103',            'Sector 105',  'Sector 106',
-  'Sector 107',            'Sector 108',  'Sector 109',
-  'Sector 10A',            'Sector 110',  'Sector 112',
-  'Sector 113',            'Sector 114',  'Sector 14',
-  'Sector 2',              'Sector 23',   'Sector 25',
-  'Sector 28',             'Sector 3',    'Sector 30',
-  'Sector 31',             'Sector 33',   'Sector 37D',
-  'Sector 38',             'Sector 39',   'Sector 43',
-  'Sector 45',             'Sector 46',   'Sector 47',
-  'Sector 48',             'Sector 49',   'Sector 50',
-  'Sector 51',             'Sector 53',   'Sector 56',
-  'Sector 57',             'Sector 58',   'Sector 59',
-  'Sector 60',             'Sector 61',   'Sector 62',
-  'Sector 63',             'Sector 63A',  'Sector 65',
-  'Sector 66',             'Sector 67',   'Sector 67A',
-  'Sector 68',             'Sector 69',   'Sector 7',
-  'Sector 76',             'Sector 77',   'Sector 8',
-  'Sector 80',             'Sector 81',   'Sector 82',
-  'Sector 83',             'Sector 84',   'Sector 85',
-  'Sector 86',             'Sector 88',   'Sector 89',
-  'Sector 90',             'Sector 92',   'Sector 93',
-  'Sector 99',             'Sohna Road',  'South City 2',
-  'Sushant Lok Phase 1'
-];
+import { locations } from "../data/locations";
 
 const createSlug = (location) => {
   return location
@@ -59,7 +31,20 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
 
         {/* LOCATIONS */}
+{/* 🔥 TOP HEADING */}
+<div className="mb-12 ">
+  <h2 className="text-2xl sm:text-3xl font-bold text-white">
+    Find Shops for Rent in{" "}
+    <span className="text-[#DD7BDF]">Gurgaon</span>
+  </h2>
 
+  <p className="text-gray-400 mt-3 max-w-2xl  text-sm sm:text-base">
+    Explore prime retail spaces in Gurgaon’s top commercial areas,
+    perfect for growing businesses and high customer visibility.
+  </p>
+
+  <div className="w-20 h-1 bg-[#DD7BDF]  mt-5 rounded-full"></div>
+</div>
         <div className="mb-10">
 
           <h3 className="text-lg font-semibold text-white mb-6">
@@ -73,10 +58,10 @@ export default function Footer() {
               <div key={index} className="relative group">
 
                 <Link
-                  href={`/${createSlug(loc)}`}
+                  href={`/shop-for-rent-in-${createSlug(loc)}-gurgaon`}
                   className="block truncate text-gray-400 hover:text-[#FFBBE1] transition duration-300"
                 >
-                  Shop For Rent in {loc} Gurgaon
+                  Shop For Rent in {loc}, Gurgaon
                 </Link>
 
                 {/* TOOLTIP */}
@@ -90,7 +75,7 @@ export default function Footer() {
                 border border-[#DD7BDF]/40 z-[9999]
                 pointer-events-none">
 
-                  Shop For Rent in {loc} Gurgaon
+                  Shop For Rent in {loc}, Gurgaon
 
                 </div>
 
@@ -137,7 +122,42 @@ export default function Footer() {
         </div>
 
         {/* FOOTER BOTTOM */}
+{/* 🔥 Bottom Navigation Buttons - CENTER */}
+<div className="border-t border-[#1a2238] pt-6 mt-10 mb-6">
+  <div className="flex justify-center items-center">
+    
+    <div className="flex flex-wrap gap-6 justify-center text-sm">
+      <Link
+        href="/about"
+        className="text-gray-400 hover:text-[#DD7BDF] transition"
+      >
+        About
+      </Link>
 
+      <Link
+        href="/blog"
+        className="text-gray-400 hover:text-[#DD7BDF] transition"
+      >
+        Blog
+      </Link>
+
+      <Link
+        href="/contact"
+        className="text-gray-400 hover:text-[#DD7BDF] transition"
+      >
+        Contact
+      </Link>
+
+      <Link
+        href="/how-it-works"
+        className="text-gray-400 hover:text-[#DD7BDF] transition"
+      >
+        How It's Work
+      </Link>
+    </div>
+
+  </div>
+</div>
         <div className="border-t border-[#1a2238] pt-6 flex flex-col md:flex-row items-center justify-between">
 
           <p className="text-sm text-gray-500 text-center md:text-left">
