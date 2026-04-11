@@ -12,7 +12,7 @@ const createSlug = (location) => {
 };
 
 export async function generateSitemap() {
-  const baseUrl = "www.shopforrentingurgaon.com";
+  const baseUrl = "https://www.shopforrentingurgaon.com";
 
   // 🔹 Static URLs
   const staticUrls = `
