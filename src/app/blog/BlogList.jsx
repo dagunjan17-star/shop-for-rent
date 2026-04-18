@@ -45,11 +45,11 @@ export default function BlogList() {
           <span className="text-[#DD7BDF]">Gurgaon Real Estate</span>
         </h2>
 
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Explore expert guides, market insights, and investment tips for
-          buying a <strong>3BHK flat in Gurgaon</strong>. Stay updated with the latest trends
-          in Gurgaon property and real estate developments.
-        </p>
+      <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+  Explore expert guides, market insights, and investment tips for
+  renting a <strong>shop in Gurgaon</strong>. Stay updated with the latest trends
+  in commercial properties, retail spaces, and business opportunities in Gurgaon.
+</p>
 
         <div className="w-20 h-1 bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] mx-auto mt-6 rounded-full"></div>
       </div>
