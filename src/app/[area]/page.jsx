@@ -27,7 +27,7 @@ const formattedArea = area
 
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
 
-            Premium <span className="text-[#DD7BDF]">Shops</span> for Rent in{" "}
+           <span className="text-[#DD7BDF]">Shops</span> for Rent in{" "}
 
             <span className="text-[#DD7BDF]">
               {formattedArea || "Gurgaon"}
