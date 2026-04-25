@@ -13,12 +13,7 @@ export async function generateMetadata() {
       "Read expert guides on shop for rent in Gurgaon, best commercial locations, investment tips, rental trends and Gurgaon commercial real estate insights.",
 
     keywords: [
-      "shop for rent in Gurgaon",
-      "Gurgaon commercial property blog",
-      "commercial property in Gurgaon",
-      "best locations for shop in Gurgaon",
-      "Gurgaon retail space rent",
-      "Gurgaon commercial investment"
+      "shop for rent Gurgaon tips", "commercial property blog Gurgaon", "retail space Gurgaon insights", "best area for shop in Gurgaon", "shop rental rates Gurgaon", "commercial property trends Gurgaon", "business setup Gurgaon", "shop for rent news Gurugram", "Gurgaon real estate blog", "commercial market Gurgaon 2026"
     ],
 
     alternates: {

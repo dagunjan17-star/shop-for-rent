@@ -2,6 +2,37 @@ import FilterProperties from "./FilterProperties";
 import Proprtes from "./Proprtes";
 import SidebarEnquiryForm from "@/components/SidebarEnquiryForm";
 import Breadcrumb from "@/components/Breadcrumb";
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const rawArea = resolvedParams?.area;
+
+  const area = rawArea?.replace("shop-for-rent-in-", "");
+
+  const formattedArea = area
+    ?.replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  const locationName = formattedArea || "Gurgaon";
+
+  return {
+    title: `Shops for Rent in ${locationName} | Commercial Spaces in ${locationName}`,
+
+    description: `Explore shops for rent in ${locationName}. Find commercial retail shops, showrooms, and business spaces in prime locations with high footfall and excellent connectivity in ${locationName}.`,
+
+    keywords: [
+      `shops for rent in ${locationName}`,
+      `shop on rent ${locationName}`,
+      `commercial shop ${locationName}`,
+      `retail space ${locationName}`,
+      `showroom for rent ${locationName}`,
+      `${locationName} commercial property`,
+    ],
+
+    alternates: {
+      canonical: `https://www.shopforrentingurgaon.comm/${rawArea}`,
+    },
+  };
+}
 export default async function Page({ params }) {
 
   const resolvedParams = await params;
