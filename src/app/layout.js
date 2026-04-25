@@ -18,22 +18,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
- title: "Shops for Rent in Gurgaon | Commercial Retail Space for Rent",
+ title: "Shop for Rent in Gurgaon | Commercial Retail Space for Rent in Gurugram",
 
 description:
-"Find verified shops for rent in Gurgaon including retail shops, showrooms, and commercial spaces. Explore affordable and premium shop spaces in prime locations with high footfall, modern infrastructure, and flexible lease options.",
+"Looking for a shop for rent in Gurgaon? Explore premium commercial retail spaces, showrooms & business shops for rent in DLF Phase, MG Road, Golf Course Road & 50+ locations in Gurgaon. Contact our experts for free consultation.",
 
 keywords: [
-  "shop for rent in gurgaon",
-  "shops for rent gurgaon",
-  "retail shop gurgaon rent",
-  "commercial shop gurgaon",
-  "showroom for rent gurgaon",
-  "shop space gurgaon rent",
-  "commercial space gurgaon rent",
-  "cheap shop for rent gurgaon",
-  "ready to move shop gurgaon",
-  "retail space gurgaon"
+"shop for rent in Gurgaon", "shops for rent in Gurgaon", "commercial shop for rent Gurgaon", "retail space for rent Gurgaon", "shop for rent Gurugram", "commercial property for rent Gurgaon", "showroom for rent Gurgaon", "office space for rent Gurgaon", "shop for rent MG Road Gurgaon", "shop for rent Golf Course Road Gurgaon", "shop for rent DLF Phase Gurgaon", "small shop for rent Gurgaon", "shop for rent near metro Gurgaon", "affordable shop for rent Gurgaon", "commercial space for rent Gurgaon", "retail shop Gurgaon", "shop for rent Cyber City Gurgaon", "shop for rent Palam Vihar Gurgaon", "shop for rent Manesar Gurgaon", "business space for rent Gurgaon"
 ],
 
   alternates: {
