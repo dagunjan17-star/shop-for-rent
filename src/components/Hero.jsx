@@ -132,9 +132,9 @@ const HeroSection = () => {
 
           <div className="bg-white p-8 rounded-2xl shadow-xl border border-white/40 backdrop-blur-sm">
 
-            <h3 className="text-2xl font-semibold mb-2 text-gray-900">
+            <h2 className="text-2xl font-semibold mb-2 text-gray-900">
               Free Consultation
-            </h3>
+            </h2>
 
             <p className="text-sm mb-6 text-gray-500">
               Fill your details and our expert will contact you shortly.
