@@ -10,18 +10,10 @@ import Pagination from "@/components/Pagination";
 
 export default function Properties() {
 
-  const { properties, loading, error } = useProperty();
-
+  const { properties, loading, error, page, setPage,
+    totalItems, itemsPerPage, } = useProperty();
   const [open, setOpen] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState("");
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 150;
-
-  const indexOfLast = currentPage * itemsPerPage;
-  const indexOfFirst = indexOfLast - itemsPerPage;
-
-  const currentProperties = properties?.slice(indexOfFirst, indexOfLast);
 
   /* ================= LOADING ================= */
 
@@ -97,7 +89,7 @@ export default function Properties() {
 
         <div className="lg:col-span-2 space-y-10">
 
-          {currentProperties.map((property) => (
+          {properties.map((property) => (
 
             <div
               key={property._id}
@@ -152,28 +144,28 @@ export default function Properties() {
                   </h3>
 
                   <p className="text-sm text-gray-500 mt-1 flex items-center gap-1">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-4 h-4 text-gray-400"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243A8 8 0 1117.657 16.657z"
-    />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-    />
-  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243A8 8 0 1117.657 16.657z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
 
-  {property.locality}
-</p>
+                    {property.locality}
+                  </p>
 
                   {/* DETAILS */}
 
@@ -247,11 +239,11 @@ export default function Properties() {
           {/* ================= PAGINATION ================= */}
 
           <Pagination
-            totalItems={properties.length}
+            totalItems={totalItems}
             itemsPerPage={itemsPerPage}
-            currentPage={currentPage}
+            currentPage={page}
             onPageChange={(page) => {
-              setCurrentPage(page);
+              setPage(page);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           />
