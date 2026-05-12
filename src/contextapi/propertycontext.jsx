@@ -34,7 +34,7 @@ const [page,setPage]=useState(1);
       setError(null);
 
       const res = await axios.get(
-        `https://deal-acres-backend.onrender.com/api/listed-properties/getPropertiesByDomain/${domain}?page=${page}&limit=${limit}`
+        `https://gurgaon-backend.onrender.com/api/listed-properties/getPropertiesByDomain/${domain}?page=${page}&limit=${limit}`
       );
       setProperties(res.data?.data || []);
         setTotalItems(res.data?.total);
@@ -67,7 +67,7 @@ const [page,setPage]=useState(1);
       setError2(null);
 
       const response = await axios.get(
-        `https://deal-acres-backend.onrender.com/api/listed-properties/getPropertiesByDomainAndLocality/${domain}/${decodeSlugWithHyphen(locality)}`
+        `https://gurgaon-backend.onrender.com/api/listed-properties/getPropertiesByDomainAndLocality/${domain}/${decodeSlugWithHyphen(locality)}`
       );
 
       setData(response?.data?.data || []);
