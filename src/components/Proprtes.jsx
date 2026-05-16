@@ -103,7 +103,9 @@ export default function Properties() {
                 <div className="relative md:w-[35%] overflow-hidden">
 
                   <Image
-                    src={property?.media?.url || "/no-image.png"}
+                    src={property?.media?.url
+                      ? property?.media?.url
+                      : "https://res.cloudinary.com/dbihlu2ve/image/upload/v1778830995/GurgaonProperties/jb7fkwi3erx2lzdorhl0.webp"}
                     unoptimized
                     alt={property.title}
                     width={600}
