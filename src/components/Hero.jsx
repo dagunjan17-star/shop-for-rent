@@ -96,22 +96,7 @@ const HeroSection = () => {
 
           <p className="text-lg max-w-2xl text-white/90 leading-relaxed">
 
-            Looking for the perfect **shop for rent in Gurgaon**? Gurgaon is
-            one of the fastest growing commercial hubs in India, offering
-            premium retail spaces in high-footfall locations.
-
-            <br /><br />
-
-            Renting a shop in Gurgaon gives your business access to corporate
-            offices, residential societies, malls, and daily commuters. These
-            commercial spaces are ideal for retail stores, cafes, offices,
-            and startups looking for prime visibility.
-
-            <br /><br />
-
-            With excellent connectivity, modern infrastructure, and strong
-            customer demand, Gurgaon is one of the best places to start or
-            expand your business.
+            Launch your business from the heart of India's corporate capital! Finding the perfect shop for rent in Gurgaon is the most important decision for your retail, F&B, or service business — and we're here to make it the right one. Gurgaon's booming commercial landscape, fuelled by a high-spending population of over 15 lakh residents plus a massive daily floating workforce from Delhi and NCR, creates insatiable demand for retail, dining, salon, clinic, and service businesses. Whether you're looking for a high-footfall ground-floor retail shop in a premium sector market complex, a corner unit in a newly developed commercial high street, or a smaller shop in a residential colony for a neighbourhood business, Gurgaon's commercial rental market has the right fit. Prime commercial shop locations in Gurgaon include MG Road, Ardee City Market, Sector 14 Market, DLF Galleria, Sohna Road commercial hubs, and the buzzing Cyber Hub corridor. Our listings provide honest rental rates, detailed shop specifications, and direct owner contacts — so you can focus on building your business, not searching endlessly. Rent the right shop in Gurgaon today and give your business the address it deserves!
 
           </p>
           <Link href="/how-it-works">
