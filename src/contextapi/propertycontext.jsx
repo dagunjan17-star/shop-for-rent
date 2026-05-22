@@ -9,6 +9,8 @@ const DEFAULT_DOMAIN = "www.shopforrentingurgaon.com";
 
 export const PropertyProvider = ({ children }) => {
 
+  const [dailyLimit,setDailyLimit]=useState(50);
+
   // ✅ FIXED DOMAIN
   const [domain] = useState(DEFAULT_DOMAIN);
 
@@ -99,6 +101,7 @@ const [page,setPage]=useState(1);
         error2,
         setLocality,
         locality,
+        dailyLimit,
       }}
     >
       {children}
