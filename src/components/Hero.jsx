@@ -76,7 +76,7 @@ const HeroSection = () => {
 
   return (
 
-    <section className="px-4 sm:px-6 py-12 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF]">
+    <section className="px-4 sm:px-6 py-8 bg-gradient-to-br from-[#FFBBE1] to-[#DD7BDF]">
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
 
@@ -94,7 +94,7 @@ const HeroSection = () => {
 
           </h1>
 
-          <p className="text-lg max-w-2xl text-white/90 leading-relaxed">
+          <p className="text-lg max-w-4xl text-white/90 leading-relaxed">
 
             Launch your business from the heart of India's corporate capital! Finding the perfect shop for rent in Gurgaon is the most important decision for your retail, F&B, or service business — and we're here to make it the right one. Gurgaon's booming commercial landscape, fuelled by a high-spending population of over 15 lakh residents plus a massive daily floating workforce from Delhi and NCR, creates insatiable demand for retail, dining, salon, clinic, and service businesses. Whether you're looking for a high-footfall ground-floor retail shop in a premium sector market complex, a corner unit in a newly developed commercial high street, or a smaller shop in a residential colony for a neighbourhood business, Gurgaon's commercial rental market has the right fit. Prime commercial shop locations in Gurgaon include MG Road, Ardee City Market, Sector 14 Market, DLF Galleria, Sohna Road commercial hubs, and the buzzing Cyber Hub corridor. Our listings provide honest rental rates, detailed shop specifications, and direct owner contacts — so you can focus on building your business, not searching endlessly. Rent the right shop in Gurgaon today and give your business the address it deserves!
 

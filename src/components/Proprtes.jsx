@@ -221,13 +221,16 @@ export default function Properties() {
                     >
                       Price on Call
                     </button>
+                       <ViewDetailsButton className="bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] text-white px-6 py-2 rounded-lg hover:opacity-90 transition w-full md:w-auto text-center font-medium"
 
-                    <Link
+                      slug={property.slug}
+                      href={`https://www.dealacres.com/property/${property.slug}`}/>
+                    {/* <Link
                       href={`/properties/${property.slug}`}
                       className="bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] text-white px-6 py-2 rounded-lg hover:opacity-90 transition w-full md:w-auto text-center font-medium"
                     >
                       View Details
-                    </Link>
+                    </Link> */}
 
                   </div>
 
