@@ -7,6 +7,9 @@ export const metadata = {
   keywords: [
   "contact shop for rent Gurgaon", "shop rental enquiry Gurgaon", "commercial space inquiry Gurgaon", "free consultation shop Gurgaon", "book shop visit Gurgaon", "shop for rent helpline Gurgaon", "property consultant contact Gurugram", "register shop requirement Gurgaon", "commercial property query Gurgaon", "shop for rent expert Gurgaon"
   ],
+  alternates: {
+    canonical: "https://www.shopforrentingurgaon.com/contact",
+  },
 };
 
 export default function Page() {

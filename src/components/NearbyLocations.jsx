@@ -25,13 +25,13 @@ export default function NearbyLocations({
       <div
         className="
           bg-gradient-to-r
-          from-[#EEF7FD]
-          via-[#E3F2FB]
-          to-[#D7ECF8]
+          from-[#FCF2FD]
+          via-[#F7E8F8]
+          to-[#F2DDF4]
           rounded-[26px]
           overflow-hidden
-          shadow-[0_10px_30px_rgba(20,61,96,0.08)]
-          border border-[#143D60]/10
+          shadow-[0_10px_30px_rgba(221,123,223,0.12)]
+          border border-[#DD7BDF]/15
         "
       >
 
@@ -47,13 +47,13 @@ export default function NearbyLocations({
                 className="
                   w-12 h-12
                   rounded-2xl
-                  bg-[#143D60]/10
+                  bg-[#DD7BDF]/10
                   backdrop-blur-md
                   flex items-center justify-center
-                  border border-[#143D60]/10
+                  border border-[#DD7BDF]/15
                 "
               >
-                <MapPin className="w-6 h-6 text-[#143D60]" />
+                <MapPin className="w-6 h-6 text-[#DD7BDF]" />
               </div>
 
               <div>
@@ -62,14 +62,14 @@ export default function NearbyLocations({
                     text-[16px]
                     sm:text-[16px]
                     font-bold
-                    text-[#143D60]
+                    text-[#C85CCB]
                     leading-tight
                   "
                 >
                   Nearby Locations
                 </h2>
 
-                <p className="text-[#143D60]/70 text-sm mt-1">
+                <p className="text-[#C85CCB]/70 text-sm mt-1">
                   Explore top nearby property areas
                 </p>
               </div>
@@ -82,10 +82,11 @@ export default function NearbyLocations({
                 flex items-center gap-2
                 px-5 py-1
                 rounded-2xl
-                bg-[#143D60]
+                bg-[#DD7BDF]
                 text-white
                 font-semibold
                 text-sm
+                hover:bg-[#cf63d1]
                 hover:scale-[1.03]
                 transition-all duration-300
                 shadow-lg
@@ -104,12 +105,12 @@ export default function NearbyLocations({
 
           <div
             className="
-              bg-white/80
+              bg-white/85
               backdrop-blur-md
               rounded-[24px]
               p-5
               shadow-xl
-              border border-[#143D60]/10
+              border border-[#DD7BDF]/10
             "
           >
 
@@ -122,7 +123,7 @@ export default function NearbyLocations({
                   key={index}
                   onClick={() =>
                     window.open(
-                      `https://www.dealacres.com/properties/2-bhk-flats-for-sale-in-${location
+                      `https://www.dealacres.com/properties/shop-for-rent-in-${location
                         .toLowerCase()
                         .replace(/,/g, "")
                         .replace(/\s+/g, "-")}`,
@@ -134,12 +135,13 @@ export default function NearbyLocations({
                     flex items-center gap-1
                     px-4 py-1
                     rounded-2xl
-                    bg-[#143D60]/5
-                    border border-[#143D60]/10
-                    hover:bg-[#143D60]
-                    hover:border-[#143D60]
+                    bg-[#DD7BDF]/5
+                    border border-[#DD7BDF]/10
+                    hover:bg-[#DD7BDF]
+                    hover:border-[#DD7BDF]
                     transition-all duration-300
                     cursor-pointer
+                    hover:shadow-md
                   "
                 >
 
@@ -157,7 +159,7 @@ export default function NearbyLocations({
                     <MapPin
                       className="
                         w-4 h-4
-                        text-[#143D60]
+                        text-[#DD7BDF]
                         group-hover:text-white
                         transition-all duration-300
                       "
@@ -169,7 +171,7 @@ export default function NearbyLocations({
                     className="
                       text-sm
                       font-semibold
-                      text-[#143D60]
+                      text-[#C85CCB]
                       whitespace-nowrap
                       group-hover:text-white
                       transition-all duration-300

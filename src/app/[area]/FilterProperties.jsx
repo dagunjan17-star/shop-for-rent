@@ -7,6 +7,7 @@ import Link from "next/link";
 import ContactPopup from "@/components/ContactPopup";
 
 import ViewDetailsButton from "@/components/ViewDetailsButton";
+import NearbyLocations from "@/components/NearbyLocations";
 
 export default function FilterProperties({ area }) {
 
@@ -116,10 +117,11 @@ export default function FilterProperties({ area }) {
 )}
       <div className="max-w-7xl mx-auto space-y-6">
 
-        {finalData.map((property) => (
-
+        {finalData.map((property , index) => (
           <div
-            key={property._id}
+            key={property._id}>
+          <div
+            
             className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border border-gray-200 overflow-hidden md:h-[250px]"
           >
 
@@ -261,7 +263,13 @@ export default function FilterProperties({ area }) {
               </div>
 
             </div>
+            </div>
 
+{(index + 1) % 10 === 0 && (
+              <NearbyLocations
+                properties={finalData.slice(index - 9, index + 1)}
+              />
+            )}
           </div>
 
         ))}

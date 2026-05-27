@@ -8,6 +8,9 @@ export const metadata = {
   keywords: [
     "shop for rent consultant Gurgaon", "commercial property expert Gurgaon", "trusted real estate agent Gurgaon", "shop rental service Gurgaon", "best property consultant Gurgaon", "commercial space advisor Gurugram", "retail property dealer Gurgaon", "shop for rent agency Gurgaon", "property expert Gurugram", "commercial rental expert Gurgaon"
   ],
+  alternates: {
+    canonical: "https://www.shopforrentingurgaon.com/about",
+  },
 };
 
 export default function Page() {

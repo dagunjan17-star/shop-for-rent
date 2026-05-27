@@ -1,9 +1,12 @@
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 export default function ShopRentHero() {
   return (
     <section className="bg-[#FFF5FB] py-6 px-4 md:px-10">
       <div className="max-w-5xl mx-auto space-y-5">
-
+<div className="py-3">
+        <Breadcrumb/>
+      </div>
         {/* Main Title */}
         <h1 className="text-3xl md:text-4xl font-bold leading-tight  bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] bg-clip-text text-transparent">
           Shop for Rent in Gurgaon – Complete Guide to Finding the Right Commercial Space
