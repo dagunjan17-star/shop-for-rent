@@ -18,7 +18,7 @@ export default function Footer() {
 
   const [showAll, setShowAll] = useState(false);
 
-  const initialCount = 50;
+  const initialCount = 19;
 
   const visibleLocations = showAll
     ? locations
@@ -51,7 +51,7 @@ export default function Footer() {
             Popular Locations
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-x-6 gap-y-4 text-sm">
 
             {visibleLocations.map((loc, index) => (
 

@@ -203,10 +203,6 @@ export default function Properties() {
 
                   </div>
 
-                  {/* <p className="text-gray-500 text-sm mt-4 line-clamp-2 leading-relaxed">
-                    {property.description ||
-                      "Premium commercial property located in a prime Gurgaon area with excellent business visibility."}
-                  </p> */}
 
                   <div className="flex-1"></div>
 
@@ -227,12 +223,7 @@ export default function Properties() {
 
                       slug={property.slug}
                       href={`https://www.dealacres.com/property/${property.slug}`}/>
-                    {/* <Link
-                      href={`/properties/${property.slug}`}
-                      className="bg-gradient-to-r from-[#FFBBE1] to-[#DD7BDF] text-white px-6 py-2 rounded-lg hover:opacity-90 transition w-full md:w-auto text-center font-medium"
-                    >
-                      View Details
-                    </Link> */}
+                   
 
                   </div>
 
@@ -242,10 +233,8 @@ export default function Properties() {
 
             </div>
             {(index + 1) % 10 === 0 && (
-              <NearbyLocations
-                properties={properties.slice(index - 9, index + 1)}
-              />
-            )}
+  <NearbyLocations blockIndex={Math.floor(index / 10)} />
+)}
             </div>
 
           ))}
