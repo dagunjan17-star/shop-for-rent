@@ -1,6 +1,15 @@
 import axios from "axios";
 
 
+import { locations } from "@/data/locations";
+const createSlug = (location) => {
+  return location
+    .replace(", Gurgaon", "")
+    .toLowerCase()
+    .replace(/,/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+};
 const currentDate =
     new Date().toISOString();
 
@@ -24,6 +33,17 @@ export async function generateSitemap() {
 
  
 
+   const locationUrls = locations.map((loc) => {
+    const slug = createSlug(loc);
+
+    return `
+      <url>
+        <loc>${baseUrl}/shop-for-rent-in-${slug}-gurgaon</loc>
+         <lastmod>${currentDate}</lastmod>
+      </url>
+    `;
+  });
+  // 🔥 BLOG URLs
   let blogUrls = [];
 
   try {
@@ -63,7 +83,7 @@ export async function generateSitemap() {
   // 🔹 Combine all
   const allUrls = [
     staticUrls,
-    
+    ...locationUrls,
      ...blogUrls,
   ].join("\n");
 
