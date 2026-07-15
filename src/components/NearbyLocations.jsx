@@ -152,7 +152,7 @@ if (
               key={item._id}
                   onClick={() =>
                     window.open(
-                      `https://www.dealacres.com/properties/shop-for-rent-in-${item.slug}`,
+                      `https://www.dealacres.com/properties/shop-for-rent-in-gurgaon`,
                       "_blank"
                     )
                   }
